@@ -1,57 +1,99 @@
-/**
-* Fanta.css (Fantasy + CSS)
-* Version 0.1.0
-* https://github.com/jamezmca/fantacss
-*
-* Sections
-* 1. Content sectioning
-* 2. Text content
-* 3. Inline text semantics
-* 4. Image and multimedia
-* 5. Tables
-* 6. Forms
-* 7. Interactive elements
-*
-*/
 
-@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&family=Poppins:wght@400;500;700;900&display=swap');
+
 
 :root {
-    --background-primary: white;
-    --background-secondary: '';
-    --background-tertiary: #dbeafe;
-    --background-accent: '';
-    --background-compliment: '';
-    --background-gradient: '';
-    --background-muted: #f8fafc;
+  /* Backgrounds (purple-indigo, lighter for "light mode") */
+  --background-primary: #2a2139;   /* page bg */
+  --background-secondary: #34294f; /* cards/surfaces */
+  --background-tertiary: #3e3163;  /* inputs/stripes */
+  --background-accent: #4a3978;
+  --background-compliment: #382b5f;
+  --background-gradient: linear-gradient(180deg,#2a2139,#34294f);
+  --background-muted: #32284d;
 
-    --color-primary: #030615;
-    --color-secondary: '';
-    --color-tertiary: '';
-    --color-accent: '';
-    --color-compliment: '';
-    --color-gradient: '';
-    --color-muted: ;
-    --color-link: #2563eb;
-    --color-link-transparent: rgba(37, 99, 235, 0.1);
+  /* Text & links */
+  --color-primary: #f8f5ff;        /* primary text (very light) */
+  --color-secondary: #e2d9ff;      /* softer purple */
+  --color-tertiary: #c4b5fd;       /* light lavender */
+  --color-accent: #fbbf24;         /* amber accent */
+  --color-compliment: #d8b4fe;     /* lavender accent */
+  --color-gradient: linear-gradient(135deg,#7c3aed 0%, #f59e0b 100%);
+  --color-muted: #d1c4e9;          /* muted text */
+  --color-link: #f59e0b;           /* amber links */
+  --color-link-transparent: rgba(245, 158, 11, 0.15);
 
-    --color-success: '';
-    --color-warning: '';
-    --color-error: '';
-    --color-info: '';
-    --color-highlight: #fef9c3;
+  /* Status */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #818cf8;
+  --color-highlight: #fef3c7;
 
-    --gradient-start: #9580ff;
-    --gradient-end: #80ffea;
+  /* Gradients */
+  --gradient-start: #7c3aed; /* violet-indigo */
+  --gradient-end: #f59e0b;   /* amber */
 
-    --border-primary: #f1f5f9;
-    --border-secondary: #bed1e7;
-    --border-highlight: #64748b;
-    --border-tertiary: '';
+  /* Borders */
+  --border-primary: #463266;
+  --border-secondary: #543c7a;
+  --border-highlight: #f59e0b;
+  --border-tertiary: #3c2d61;
 
-    --shadow-dark: '';
-    --shadow-light: '';
-    --shadow-text: '';
+  /* Shadows */
+  --shadow-dark: rgba(0,0,0,0.4);
+  --shadow-light: rgba(255,255,255,0.08);
+  --shadow-text: rgba(0,0,0,0.65);
+
+  --padding-small: 1rem;
+  --padding-large: 2rem;
+
+  --border-radius-small: 0.5rem;
+  --border-radius-large: 0.75rem;
+  --highlight-border-radius: 0.5rem;
+
+  --text-selection: rgba(245,158,11,0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Darker purple-indigo for "dark mode" */
+    --background-primary: #1e1830;
+    --background-secondary: #261d3f;
+    --background-tertiary: #2f2453;
+    --background-accent: #3a2c69;
+    --background-compliment: #241b44;
+    --background-gradient: linear-gradient(180deg,#1e1830,#261d3f);
+    --background-muted: #231b3f;
+
+    --color-primary: #f8f5ff;
+    --color-secondary: #e2d9ff;
+    --color-tertiary: #c4b5fd;
+    --color-accent: #fbbf24;
+    --color-compliment: #d8b4fe;
+    --color-gradient: linear-gradient(135deg,#7c3aed 0%, #f59e0b 100%);
+    --color-muted: #d1c4e9;
+    --color-link: #f59e0b;
+    --color-link-transparent: rgba(245, 158, 11, 0.15);
+
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #818cf8;
+    --color-highlight: #fef3c7;
+
+    --gradient-start: #7c3aed;
+    --gradient-end: #f59e0b;
+
+    --border-primary: #463266;
+    --border-secondary: #543c7a;
+    --border-highlight: #f59e0b;
+    --border-tertiary: #3c2d61;
+
+    --shadow-dark: rgba(0,0,0,0.4);
+    --shadow-light: rgba(255,255,255,0.08);
+    --shadow-text: rgba(0,0,0,0.65);
 
     --padding-small: 1rem;
     --padding-large: 2rem;
@@ -60,63 +102,18 @@
     --border-radius-large: 0.75rem;
     --highlight-border-radius: 0.5rem;
 
-    --text-selection: '';
+    --text-selection: rgba(245,158,11,0.35);
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-primary: #05070f;
-        --background-secondary: #0e101e;
-        --background-tertiary: #121424;
-        --background-accent: '';
-        --background-compliment: '';
-        --background-gradient: '';
-        --background-muted: #1a1e32;
 
-        --color-primary: white;
-        --color-secondary: '';
-        --color-tertiary: '';
-        --color-accent: '';
-        --color-compliment: '';
-        --color-gradient: '';
-        --color-muted: ;
-        --color-link: #60a5fa;
-        --color-link-transparent: rgba(37, 99, 235, 0.1);
 
-        --color-success: '';
-        --color-warning: '';
-        --color-error: '';
-        --color-info: '';
-        --color-highlight: #fef9c3;
-
-        --gradient-start: #9580ff;
-        --gradient-end: #80ffea;
-
-        --border-primary: #29325b;
-        --border-secondary: #323c71;
-        --border-highlight: #4649af;
-        --border-tertiary: '';
-
-        --shadow-dark: '';
-        --shadow-light: '';
-        --shadow-text: '';
-
-        --padding-small: 1rem;
-        --padding-large: 2rem;
-
-        --border-radius-small: 0.5rem;
-        --border-radius-large: 0.75rem;
-        --highlight-border-radius: 0.5rem;
-
-        --text-selection: '';
-    }
-}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Eczar", serif;
+    font-family: "Lato", sans-serif;
 }
 
 body {
@@ -144,7 +141,7 @@ h4,
 h5,
 h6,
 button {
-    font-family: "Grenze", serif;
+    font-family: "Poppins", sans-serif;
     width: fit-content;
 }
 
